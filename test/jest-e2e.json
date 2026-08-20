@@ -1,0 +1,29 @@
+{
+  "preset": "ts-jest/presets/default-esm",
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "injectGlobals": true,
+  "testRegex": ".e2e-spec.ts$",
+  "setupFiles": ["<rootDir>/setup.ts"],
+  "extensionsToTreatAsEsm": [".ts"],
+  "moduleNameMapper": {
+    "^(\\.{1,2}/.*)\\.js$": "$1"
+  },
+  "transform": {
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        "useESM": true,
+        "tsconfig": {
+          "module": "ESNext",
+          "moduleResolution": "nodenext",
+          "resolvePackageJsonExports": true,
+          "esModuleInterop": true,
+          "experimentalDecorators": true,
+          "emitDecoratorMetadata": true
+        }
+      }
+    ]
+  }
+}
